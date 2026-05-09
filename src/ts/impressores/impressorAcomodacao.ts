@@ -10,13 +10,13 @@ export default class ImpressorAcomodacao implements Impressor {
         let descricao = `Nomenclatura: ${this.acomodacao.NomeAcomadacao.toString()}\n`
             + `-- Quantidade de leitos para solteiros: ${this.acomodacao.CamaSolteiro}\n`
             + `-- Quantidade de leitos para casais: ${this.acomodacao.CamaCasal}\n`
-            + `-- Climatização: ${this.converterBooleano(this.acomodacao.Climatizacao)}\n`
+            + `-- Climatização: ${this.converterTrueFalse(this.acomodacao.Climatizacao)}\n`
             + `-- Quantidade de garagens disponíveis: ${this.acomodacao.Garagem}\n`
             + `-- Quantidade de suites: ${this.acomodacao.Suite}\n`
         return descricao
     }
 
-    private converterBooleano(valor: Boolean) {
+    private converterTrueFalse(valor: Boolean) {
         if (valor) {
             return `sim`
         } else {
